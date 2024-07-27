@@ -1,3 +1,6 @@
+-- Ex1. Faça uma query que apresente o tamanho médio,
+-- máximo e mínimo da descrição do objeto por categoria
+
 SELECT 
        product_category_name,
        AVG(product_description_lenght) AS AVG_DESCRIPTION,

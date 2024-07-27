@@ -1,0 +1,34 @@
+-- PROCURE SEMPRE GENERALIZAR SUAS QUERIES
+-- PARA EVITAR RETRABALHO
+
+-- SELECT seller_state,
+--        COUNT(DISTINCT SELLER_ID) AS QTDE_VENDEDORES
+-- FROM TB_SELLERS
+
+-- GROUP BY seller_state
+
+
+-- também podemos fazer de uma forma mais específica:
+
+-- SELECT seller_state,
+--        COUNT(DISTINCT SELLER_ID) AS QTDE_VENDEDORES
+-- FROM TB_SELLERS
+-- WHERE seller_state IN ('SP', 'RJ', 'PR')
+
+-- GROUP BY seller_state
+
+--PUXANDO OS ESTADOS COM MAIS DE 10 VENDEDORES ATRAVES DE UMA SUBQUERY
+--(NUNCA FAÇA ISSO POIS É A PIOR COISA QUE PODE SER FEITA)
+SELECT t1.*
+
+FROM (
+
+    SELECT seller_state,
+           COUNT(DISTINCT seller_id) AS QNTDE_SELLERS
+
+    FROM tb_sellers
+
+    GROUP BY seller_state
+) AS t1
+
+WHERE T1.QNTDE_SELLERS > 10

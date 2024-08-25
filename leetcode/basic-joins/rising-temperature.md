@@ -120,4 +120,3 @@ AND DATEDIFF(recordDate, previous_Date) = 1;
 - **SELECT**: Compara a temperatura do dia atual com a do dia anterior e verifica se a diferença entre as datas é exatamente 1 dia.
 
 Essas abordagens garantem que você obtenha todos os IDs onde a temperatura foi maior do que no dia anterior.
-```

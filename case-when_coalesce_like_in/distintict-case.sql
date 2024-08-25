@@ -1,7 +1,7 @@
 -- lista das categorias por ordem alfabética
 
 SELECT 
-        DISTINCT CASE WHEN product_category_name IS NULL THEN 'outros'
+        DISTINCT CASE WHEN product_category_name IS NULL 'outros'
                       
                       ELSE product_category_name
                  END AS categoria_fillna
